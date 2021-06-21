@@ -17,5 +17,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: liblzma-5.2.5-{{matrix.vs}}-${{matrix.arch}}
+          name: liblzma-5.2.5-${{matrix.vs}}-${{matrix.arch}}
           path: ${{github.workspace}}\winlibs_out
