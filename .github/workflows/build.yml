@@ -13,7 +13,7 @@ jobs:
       - name: Setup MSBuild environment
         uses: microsoft/setup-msbuild@v1.0.2
       - name: Build liblzma
-        run: ./.github/workflows/build.ps1
+        run: ./.github/workflows/build.ps1 -ts ${{matrix.vs}} -arch ${{matrix.arch}}
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
