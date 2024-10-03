@@ -47,7 +47,7 @@
 #
 #############################################################################
 
-cmake_minimum_required(VERSION 3.13...3.16 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.15)
 
 include(CheckSymbolExists)
 include(CheckStructHasMember)
@@ -69,6 +69,8 @@ string(REGEX REPLACE
 
 # Among other things, this gives us variables xz_VERSION and xz_VERSION_MAJOR.
 project(xz VERSION "${XZ_VERSION}" LANGUAGES C)
+
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 # Definitions common to all targets:
 add_compile_definitions(
